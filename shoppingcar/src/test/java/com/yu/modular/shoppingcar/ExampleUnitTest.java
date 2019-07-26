@@ -1,4 +1,4 @@
-package com.yu.order;
+package com.yu.modular.shoppingcar;
 
 import org.junit.Test;
 

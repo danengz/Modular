@@ -1,4 +1,4 @@
-package com.yu.shoppingcar;
+package com.yu.common;
 
 import org.junit.Test;
 

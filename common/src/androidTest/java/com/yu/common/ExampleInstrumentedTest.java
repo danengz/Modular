@@ -1,4 +1,4 @@
-package com.yu.shoppingcar;
+package com.yu.common;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yu.shoppingcar.test", appContext.getPackageName());
+        assertEquals("com.yu.common.test", appContext.getPackageName());
     }
 }

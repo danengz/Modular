@@ -1,4 +1,4 @@
-package com.yu.order;
+package com.yu.modular.shoppingcar;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.yu.order.test", appContext.getPackageName());
+        assertEquals("com.yu.modular.shoppingcar", appContext.getPackageName());
     }
 }
