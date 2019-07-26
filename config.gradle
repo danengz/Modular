@@ -1,0 +1,24 @@
+// 添加多个自定义属性，可以通过ext代码块
+ext {
+
+    androidId = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "29.0.0",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    appId = [
+            app    : "com.yu.modular",
+    ]
+
+
+    supportLibrary = "28.0.0"
+    dependencies = [
+            "appcompat" : "com.android.support:appcompat-v7:${supportLibrary}",
+            "recyclerview" : "com.android.support:recyclerview-v7:${supportLibrary}",
+            "constraint" : "com.android.support.constraint:constraint-layout:1.1.3"
+    ]
+}
