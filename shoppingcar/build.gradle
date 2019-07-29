@@ -57,4 +57,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     support.each { k, v -> implementation v } // 上面已经定义过support，是在Project的config.gradle中统一管理的
+
+    implementation project(':common') // 公共基础库
 }
