@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yu.arouter_annotation.ARouter;
 import com.yu.common.PathManager;
 
+@ARouter(group = "group", path = "/shoppingcar/ShoppdingCar_MainActivity")
 public class ShoppdingCar_MainActivity extends AppCompatActivity {
 
     @Override

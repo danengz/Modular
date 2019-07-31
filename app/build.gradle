@@ -15,6 +15,14 @@ android {
         versionCode androidId.versionCode
         versionName androidId.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 在gradle文件中配置选项参数值（用于APT传参接收）
+        // 切记：必须写在defaultConfig节点下
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName(), packageNameForAPT: packageNameForAPT]
+            }
+        }
     }
     buildTypes {
         release {
@@ -26,7 +34,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     // 标准写法
     // implementation group: 'com.android.support', name:'appcompat-v7', version:'28.0.0'
     // 简写
@@ -36,6 +43,8 @@ dependencies {
     support.each { k, v -> implementation v } // 上面已经定义过support，是在Project的config.gradle中统一管理的
 
     implementation project(':common') // 公共基础库
+    implementation project(':arouter_annotation') // 注解
+    annotationProcessor project(':arouter_compiler') // 注解处理器
 
     if (isRelease) {
         implementation project(':order')

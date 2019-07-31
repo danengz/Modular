@@ -5,8 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.yu.common.PathManager;
+import com.yu.arouter_annotation.ARouter;
+import com.yu.modular.apt.ARouter$$Path$$order;
 
+import java.util.Map;
+
+@ARouter(group = "app", path = "/app/MainActivity")
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +18,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     public void jumpOrder(View view) {
-        Class clazz = PathManager.get("order", "Order_MainActivity");
+//        Class clazz = PathManager.get("order", "Order_MainActivity");
+//        Intent intent = new Intent(this, clazz);
+//        startActivity(intent);
+
+
+        ARouter$$Path$$order router = new ARouter$$Path$$order();
+        Map<String, Class> pathMap = router.loadPath();
+        Class clazz = pathMap.get("/order/Order_MainActivity");
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }

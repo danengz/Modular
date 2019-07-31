@@ -1,1 +1,1 @@
-include ':app', ':order', ':shoppingcar', ':common'
+include ':app', ':order', ':shoppingcar', ':common', ':arouter_annotation', ':arouter_compiler'

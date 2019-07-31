@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.yu.arouter_annotation.ARouter;
 import com.yu.common.PathManager;
 
+
+@ARouter(group = "order", path = "/order/Order_MainActivity")
 public class Order_MainActivity extends AppCompatActivity {
 
     @Override
