@@ -74,6 +74,26 @@ public class RouterManager {
 
     }
 
+    /**
+     * 获取目标类对象
+     *
+     * @param groupName
+     * @param pathName
+     * @return
+     */
+    public Object getResource(String groupName, String pathName) {
+
+
+        try {
+            return this.get(groupName, pathName).newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
+    }
+
 
     /**
      * 获取APT生成的类

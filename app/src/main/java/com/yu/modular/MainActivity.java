@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jumpShoppingCar(View view) {
-        Class clazz = RouterManager.getInstance().get("shoppingcar", "ShoppingCar_MainActivity");
-        Intent intent = new Intent(this, clazz);
-        startActivity(intent);
 //        try {
 //            Class clazz = Class.forName("com.yu.modular.shoppingcar.ShoppingCar_MainActivity");
 //            Intent intent = new Intent(this, clazz);
@@ -40,5 +37,9 @@ public class MainActivity extends AppCompatActivity {
 //        } catch (ClassNotFoundException e) {
 //            e.printStackTrace();
 //        }
+
+        Class clazz = RouterManager.getInstance().get("shoppingcar", "ShoppingCar_MainActivity");
+        Intent intent = new Intent(this, clazz);
+        startActivity(intent);
     }
 }
