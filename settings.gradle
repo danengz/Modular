@@ -1,1 +1,1 @@
-include ':app', ':order', ':shoppingcar', ':common', ':arouter_annotation', ':arouter_compiler'
+include ':app', ':order', ':shoppingcar', ':common', ':router_annotation', ':router_compiler', ':router_api'

@@ -43,8 +43,8 @@ dependencies {
     support.each { k, v -> implementation v } // 上面已经定义过support，是在Project的config.gradle中统一管理的
 
     implementation project(':common') // 公共基础库
-    implementation project(':arouter_annotation') // 注解
-    annotationProcessor project(':arouter_compiler') // 注解处理器
+    implementation project(':router_annotation') // 注解
+    annotationProcessor project(':router_compiler') // 注解处理器
 
     if (isRelease) {
         implementation project(':order')

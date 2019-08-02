@@ -5,12 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.yu.arouter_annotation.ARouter;
-import com.yu.modular.apt.ARouter$$Path$$order;
+import com.yu.router_annotation.Router;
+import com.yu.router_api.RouterManager;
 
-import java.util.Map;
-
-@ARouter(group = "app", path = "/app/MainActivity")
+@Router(group = "app", path = "MainActivity")
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,20 +24,21 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 
 
-        ARouter$$Path$$order router = new ARouter$$Path$$order();
-        Map<String, Class> pathMap = router.loadPath();
-        Class clazz = pathMap.get("/order/Order_MainActivity");
+        Class clazz = RouterManager.getInstance().get("order", "Order_MainActivity");
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }
 
     public void jumpShoppingCar(View view) {
-        try {
-            Class clazz = Class.forName("com.yu.modular.shoppingcar.ShoppdingCar_MainActivity");
-            Intent intent = new Intent(this, clazz);
-            startActivity(intent);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+        Class clazz = RouterManager.getInstance().get("shoppingcar", "ShoppingCar_MainActivity");
+        Intent intent = new Intent(this, clazz);
+        startActivity(intent);
+//        try {
+//            Class clazz = Class.forName("com.yu.modular.shoppingcar.ShoppingCar_MainActivity");
+//            Intent intent = new Intent(this, clazz);
+//            startActivity(intent);
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
     }
 }

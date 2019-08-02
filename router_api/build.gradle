@@ -28,8 +28,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:28.0.0'
-
-    // 每个功能子模块既然都要生成APT源文件，而且又是所有模块依赖的公共库
-    // 那么公共基础库依赖路由router_api就能向每个子模块提供开放api了
-    api project(':router_api') // 路由对外开放api模块
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }

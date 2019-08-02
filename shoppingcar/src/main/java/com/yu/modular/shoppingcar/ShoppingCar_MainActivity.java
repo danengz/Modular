@@ -1,4 +1,4 @@
-package com.yu.modular.order;
+package com.yu.modular.shoppingcar;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,14 +8,13 @@ import android.view.View;
 import com.yu.router_annotation.Router;
 import com.yu.router_api.RouterManager;
 
-
-@Router(group = "order", path = "Order_MainActivity")
-public class Order_MainActivity extends AppCompatActivity {
+@Router(group = "shoppingCar", path = "ShoppingCar_MainActivity")
+public class ShoppingCar_MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_activity_main);
+        setContentView(R.layout.shoppingcar_activity_main);
     }
 
     public void jumpApp(View view) {
@@ -24,8 +23,8 @@ public class Order_MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void jumpShoppingCar(View view) {
-        Class clazz = RouterManager.getInstance().get("shoppingcar", "ShoppingCar_MainActivity");
+    public void jumpOrder(View view) {
+        Class clazz = RouterManager.getInstance().get("order", "Order_MainActivity");
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
     }
